@@ -5,7 +5,7 @@ Você deverá desenvolver uma API (Restful) simples que receba uma requisição 
 Premissas:
 
 Não será possível reiniciar o fluxo da leitura da string.
-Para a tarefa 1 não poderá ser utilizado nenhuma lib, apenas código nativo na identificação da vogal.
+Na tarefa 1 não poderá ser utilizado nenhuma lib, apenas código nativo na identificação da vogal.
 
 Exemplo:
 
