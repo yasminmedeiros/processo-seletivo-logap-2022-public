@@ -11,7 +11,6 @@ import java.util.List;
 //@CrossOrigin(origins = "http://localhost:8081")
 @RestController
 public class CategoryController {
-
     @Autowired
     CategoryRepository categoryRepository;
 
