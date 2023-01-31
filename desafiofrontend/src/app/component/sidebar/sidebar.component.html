@@ -1,0 +1,50 @@
+<div>
+    <div class="w-3/4 mx-auto p-4 py-8 border-b">
+        <img src="../../../assets/logo.svg">
+    </div>
+    <mat-list class="text-center w-3/4 mx-auto text-white font-mons text-lg border-b ">
+        <mat-list-item class="hover:bg-blue-700 hover:opacity-80 rounded-xl" >
+            <a routerLink="/">Produtos</a>
+        </mat-list-item>
+        <mat-list-item class="hover:bg-blue-700 hover:opacity-80 rounded-xl">
+            <a routerLink="/">Categorias</a>
+        </mat-list-item>
+        <mat-list-item class="hover:bg-blue-700 hover:opacity-80 rounded-xl">
+            <a routerLink="/">Fornecedores</a>
+        </mat-list-item>
+    </mat-list>
+    <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="text-center">
+        <mat-expansion-panel-header  class="justify-center text-white text-lg mt-4 font-mons">
+            <mat-panel-description class="text-right">Cadastros</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-nav-list class="text-sm text-center text-white">
+            <a mat-list-item routerLink="#" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
+               <span>Cadastrar Produto</span>
+            </a>
+            <a mat-list-item routerLink="#" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
+                <span>Cadastrar Categoria</span>
+             </a>
+            <a mat-list-item routerLink="#" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
+                <span> Cadastrar Fornecedor</span>
+             </a>
+        </mat-nav-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="text-center">
+        <mat-expansion-panel-header  class=" justify-center text-white text-lg  mt-4 font-mons">
+            <mat-panel-description class="text-right">Relatórios</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-nav-list class="text-sm text-center text-white">
+            <a mat-list-item routerLink="#" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
+               <span>Inventário por Categoria</span>
+            </a>
+            <a mat-list-item routerLink="#" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
+                <span>Falta de Estoque</span>
+             </a>
+            <a mat-list-item routerLink="#" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
+                <span> Falta por Fornecedor</span>
+             </a>
+        </mat-nav-list>
+    </mat-expansion-panel>
+    
+</div>
+        

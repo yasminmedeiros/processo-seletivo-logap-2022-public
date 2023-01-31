@@ -1,0 +1,14 @@
+mat-list{
+    margin: auto;
+}
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+    display:grid;
+    flex-grow: 1;
+    flex-basis: 0;
+    align-items: center;
+    text-align: center;
+}
+.mat-expansion-panel{
+    width: 90%;
+    margin: auto;
+}
