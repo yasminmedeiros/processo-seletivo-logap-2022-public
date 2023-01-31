@@ -21,7 +21,7 @@ export class TableAllProductsComponent  implements OnInit{
   constructor(private product:ProductService,
     private _liveAnnouncer: LiveAnnouncer){ }
   ngOnInit(): void {
-    this.product.getProduct()
+    this.product.get()
       .subscribe(res=>{
         this.productList = res;
       })

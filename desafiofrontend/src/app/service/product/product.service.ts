@@ -13,7 +13,7 @@ export class ProductService {
   constructor(private http:HttpClient) { }
   private baseURL = 'https://desafiobackend.herokuapp.com'
 
-  getProduct(){
+  get(){
     return this.http.get<ProductInterface[]>(`${this.baseURL}/product`)
                     .pipe(map((res)=>{
                       return res;

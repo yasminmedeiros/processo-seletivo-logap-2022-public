@@ -25,21 +25,21 @@
             </ng-container>
 
             <ng-container matColumnDef="quantity">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by quantity">
                 Quantidade no Estoque
                 </th>
                 <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
             </ng-container>
 
             <ng-container matColumnDef="quantity_minimum">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by quantity_minimum">
                 Quantidade Mínima
                 </th>
 
                 <td mat-cell *matCellDef="let element"> {{element.quantity_minimum}} </td>
             </ng-container>
             <ng-container matColumnDef="buttons">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by buttons">
                 </th>
                 <td mat-cell *matCellDef="let element"> 
                     <div >
