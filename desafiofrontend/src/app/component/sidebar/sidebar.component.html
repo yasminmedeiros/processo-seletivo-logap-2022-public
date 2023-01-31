@@ -4,13 +4,13 @@
     </div>
     <mat-list class="text-center w-3/4 mx-auto text-white font-mons text-lg border-b ">
         <mat-list-item class="hover:bg-blue-700 hover:opacity-80 rounded-xl" >
-            <a routerLink="/">Produtos</a>
+            <a routerLink="/products">Produtos</a>
         </mat-list-item>
         <mat-list-item class="hover:bg-blue-700 hover:opacity-80 rounded-xl">
-            <a routerLink="/">Categorias</a>
+            <a routerLink="/categories">Categorias</a>
         </mat-list-item>
         <mat-list-item class="hover:bg-blue-700 hover:opacity-80 rounded-xl">
-            <a routerLink="/">Fornecedores</a>
+            <a routerLink="/providers">Fornecedores</a>
         </mat-list-item>
     </mat-list>
     <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="text-center">
@@ -18,13 +18,13 @@
             <mat-panel-description class="text-right">Cadastros</mat-panel-description>
         </mat-expansion-panel-header>
         <mat-nav-list class="text-sm text-center text-white">
-            <a mat-list-item routerLink="#" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
+            <a mat-list-item routerLink="/post-product" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
                <span>Cadastrar Produto</span>
             </a>
-            <a mat-list-item routerLink="#" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
+            <a mat-list-item routerLink="/post-category" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
                 <span>Cadastrar Categoria</span>
              </a>
-            <a mat-list-item routerLink="#" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
+            <a mat-list-item routerLink="/post-provider" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
                 <span> Cadastrar Fornecedor</span>
              </a>
         </mat-nav-list>

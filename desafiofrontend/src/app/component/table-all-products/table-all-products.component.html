@@ -1,3 +1,67 @@
-<section class="bg-gray-200 h-screen">
+<section>
+    <h1 class="text-3xl my-8 ml-8">Produtos</h1>
+    <div class="h-screen mx-8">
+       <table mat-table [dataSource]="productList" matSort (matSortChange)="announceSortChange($event)"
+            class="mat-elevation-z8">
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+                Nome
+                </th>
+                <td mat-cell *matCellDef="let element" > {{element.name}} </td>
+            </ng-container>
 
+            <ng-container matColumnDef="value_send">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by value_send">
+                Valor de Venda
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.value_send}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="value_buy">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by value_buy">
+                Valor de Compra
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.value_buy}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="quantity">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+                Quantidade no Estoque
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="quantity_minimum">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+                Quantidade Mínima
+                </th>
+
+                <td mat-cell *matCellDef="let element"> {{element.quantity_minimum}} </td>
+            </ng-container>
+            <ng-container matColumnDef="buttons">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+                </th>
+                <td mat-cell *matCellDef="let element"> 
+                    <div >
+                        <a  routerLink="/put-product/" target="_blank">
+                            <img class="border mx-auto h-12 w-12 p-1 bg-yellow-400 rounded-xl my-1.5" src="../../../assets/edit.svg"> 
+                        </a>
+                    </div>
+                    <div >
+                        <button  routerLink="/put-product/" target="_blank" (click)=delete(element.id)  >
+                            <img class="border mx-auto h-12 w-12 p-1 bg-red-500 rounded-xl my-1.5"
+                             src="../../../assets/delete.svg"
+                             > 
+                        </button>
+                    </div>
+                    
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+       </table>
+       
+    </div>
+    
 </section>
