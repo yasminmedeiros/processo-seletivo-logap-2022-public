@@ -27,12 +27,28 @@ export class FormPostProviderComponent implements OnInit{
   handleError(controlName:string, errorName:string){
     return this.reactiveForm.controls[controlName].hasError(errorName);
   }
+  position = 'top-end';
+  visible = false;
+  percentage = 0;
+
+  toggleToast() {
+    this.visible = !this.visible;
+  }
+
+  onVisibleChange($event: boolean) {
+    this.visible = $event;
+    this.percentage = !this.visible ? 0 : this.percentage;
+  }
+
+  onTimerChange($event: number) {
+    this.percentage = $event * 25;
+  }
   saveProvider(){
     this.provider.postData(this.reactiveForm.value).subscribe(res=>{
-      console.log("sucess");
-    }, ()=>{
-      console.log("error");
-    })
+      this.toggleToast();
+     }, ()=>{
+       console.log("error");
+     })
   }
 
 }

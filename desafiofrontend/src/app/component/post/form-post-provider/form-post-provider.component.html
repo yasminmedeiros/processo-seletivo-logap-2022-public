@@ -1,7 +1,7 @@
 
 <section class="h-auto w-3/4 m-4 mt-16 bg-blue-900 rounded-xl border mx-auto inline">
     <h1 class="text-4xl my-12 mx-auto  mt-16 text-center text-white">Cadastro de Fornecedor</h1>
-    <form class="w-4/5  mx-auto my-24" [formGroup]="reactiveForm" (ngSubmit)="saveProvider()">
+    <form class="w-4/5  mx-auto my-20" [formGroup]="reactiveForm" (ngSubmit)="saveProvider()">
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-first-name">
@@ -44,3 +44,19 @@
       </form>
       
 </section>
+<c-toaster [placement]="position" class="p-3 " position="fixed">
+  <c-toast
+    class="bg-white"
+    (timer)="onTimerChange($event)"
+    (visibleChange)="onVisibleChange($event)"
+    [visible]="visible">
+    <c-toast-header class="bg-green-700 text-lg text-white">
+      Fornecedor criado com sucesso!
+    </c-toast-header>
+    <c-toast-body>
+      <c-progress thin>
+        <c-progress-bar [value]="percentage" class="bg-green-600"></c-progress-bar>
+      </c-progress>
+    </c-toast-body>
+  </c-toast>
+</c-toaster>

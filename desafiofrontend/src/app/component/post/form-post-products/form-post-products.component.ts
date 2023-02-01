@@ -33,6 +33,22 @@ export class FormPostProductsComponent implements OnInit{
       });
     this.initializeForm();
   }
+  position = 'top-end';
+  visible = false;
+  percentage = 0;
+
+  toggleToast() {
+    this.visible = !this.visible;
+  }
+
+  onVisibleChange($event: boolean) {
+    this.visible = $event;
+    this.percentage = !this.visible ? 0 : this.percentage;
+  }
+
+  onTimerChange($event: number) {
+    this.percentage = $event * 25;
+  }
 
   initializeForm(){
     this.form=new FormGroup({
@@ -53,9 +69,11 @@ export class FormPostProductsComponent implements OnInit{
       quantity: this.form.value.quantity,
       quantity_minimum: this.form.value.quantity_minimum
     },`${this.form.value.category.id}`, `${this.form.value.provider.id}`)
-    .subscribe((result)=>{
-      console.log(result);
-    });
+    .subscribe(()=>{
+      this.toggleToast();
+     }, ()=>{
+       console.log("error");
+     })
   }
 
 }

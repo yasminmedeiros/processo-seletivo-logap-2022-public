@@ -25,12 +25,29 @@ export class FormPostCategoryComponent {
   handleError(controlName:string, errorName:string){
     return this.reactiveForm.controls[controlName].hasError(errorName);
   }
+  position = 'top-end';
+  visible = false;
+  percentage = 0;
+
+  toggleToast() {
+    this.visible = !this.visible;
+  }
+
+  onVisibleChange($event: boolean) {
+    this.visible = $event;
+    this.percentage = !this.visible ? 0 : this.percentage;
+  }
+
+  onTimerChange($event: number) {
+    this.percentage = $event * 25;
+  }
   saveProvider(){
     this.category.postData(this.reactiveForm.value).subscribe(res=>{
-      console.log("sucess");
+     this.toggleToast();
     }, ()=>{
       console.log("error");
     })
   }
+  
 
 }
