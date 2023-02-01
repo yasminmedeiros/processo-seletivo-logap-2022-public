@@ -36,12 +36,10 @@ export class TableAllCategoryComponent  implements OnInit{
       this._liveAnnouncer.announce('Sorting cleared');
     }
   }
-  delete(id:number) {
-    this.category.deleteData(`${id}`)
-      .subscribe(response => {
-        console.log(response);
-      })
-    location.reload();
 
+  delete(id:number) {
+    this.category.deleteData(`${id}`).subscribe(()=>{
+      console.log("")
+     })
   }
 }

@@ -7,7 +7,7 @@ import { CategoryService } from 'src/app/service/category/category.service';
   templateUrl: './form-post-category.component.html',
   styleUrls: ['./form-post-category.component.css']
 })
-export class FormPostCategoryComponent {
+export class FormPostCategoryComponent implements OnInit {
   constructor(private category:CategoryService) { }
   reactiveForm:FormGroup={} as FormGroup;
   ngOnInit(): void {

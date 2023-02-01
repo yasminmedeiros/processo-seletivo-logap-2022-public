@@ -40,12 +40,12 @@ export class TableAllProductsComponent  implements OnInit{
       this._liveAnnouncer.announce('Sorting cleared');
     }
   }
+  
   delete(id:number) {
     this.product.deleteData(`${id}`)
-      .subscribe(response => {
-        console.log(response);
+      .subscribe(() => {
+        console.log("");
       })
-    location.reload();
 
   }
     

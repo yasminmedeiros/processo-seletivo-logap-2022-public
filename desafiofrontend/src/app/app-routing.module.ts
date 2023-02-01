@@ -9,6 +9,9 @@ import { StockLackComponent } from './component/report/stock-lack/stock-lack.com
 import { TableAllCategoryComponent } from './component/get/table-all-category/table-all-category.component';
 import { TableAllProductsComponent } from './component/get/table-all-products/table-all-products.component';
 import { TableAllProviderComponent } from './component/get/table-all-provider/table-all-provider.component';
+import { FormPutProductComponent } from './component/put/form-put-product/form-put-product.component';
+import { FormPutCategoryComponent } from './component/put/form-put-category/form-put-category.component';
+import { FormPutProviderComponent } from './component/put/form-put-provider/form-put-provider.component';
 
 const routes: Routes = [
     {path:'' ,redirectTo:'products', pathMatch:'full' },
@@ -18,6 +21,9 @@ const routes: Routes = [
     {path:'post-product', component: FormPostProductsComponent},
     {path:'post-category', component: FormPostCategoryComponent},
     {path:'post-provider', component: FormPostProviderComponent},
+    {path:'put-product', component: FormPutProductComponent},
+    {path:'put-category', component: FormPutCategoryComponent},
+    {path:'put-provider', component: FormPutProviderComponent},
     {path:'stock-category', component: StockCategoryComponent},
     {path:'stock-lack', component: StockLackComponent},
     {path:'stock-lack-by-provider', component: StockLackByProviderComponent},

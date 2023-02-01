@@ -7,10 +7,12 @@ mat-list{
     flex-basis: 0;
     align-items: center;
     text-align: center;
-    padding: 0 0 0 ;
+    padding: 0 0;
 }
 .mat-expansion-panel{
     width: 90%;
     margin: auto;
-    
+}
+.mat-expansion-panel-body{
+    padding: 0px 0px 0px !important;
 }
