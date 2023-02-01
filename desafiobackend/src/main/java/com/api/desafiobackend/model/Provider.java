@@ -22,12 +22,21 @@ public class Provider {
     private String email;
     @Column(name = "phone")
     private String phone;
-
-
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn( name = "provider_id", referencedColumnName = "id")
+    List<Product> products = new ArrayList<>();
     public Provider() {
     }
 
-    public Provider( String name, String cnpj, String email, String phone) {
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    public Provider(String name, String cnpj, String email, String phone) {
         this.name = name;
         this.cnpj = cnpj;
         this.email = email;
