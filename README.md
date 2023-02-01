@@ -47,6 +47,10 @@ Seu trabalho será criar uma aplicação Web para que os responsáveis pelo seto
 
 <p>Vale ressaltar que tal aplicação se encontra rodando na seguinte URL: "https://desafiobackend.herokuapp.com/"</p>
 
+
 ## 2. Desafio Frontend
 
 <p> Crianção de uma aplicação web utilizando Angular e Typescript, que se encontra rodando na seguinte URL:"https://desafiofrontend.herokuapp.com/"</p>
+
+## 3. Desafio Lógico
+<p>Foi criada uma rota para tal: a "/logicProgram", que recebe um Request Paramêtro do tipo String chamada "strToAnalyse"</p>

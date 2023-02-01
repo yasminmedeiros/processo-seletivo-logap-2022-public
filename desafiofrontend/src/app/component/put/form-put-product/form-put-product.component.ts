@@ -21,8 +21,10 @@ export class FormPutProductComponent implements OnInit {
 
   providerDefault = {} as ProviderInterface;
   categoryDefault = {} as CategoryInterface;
+
   statesCategory:CategoryInterface[] = [];
   statesProvider:ProviderInterface[] = []; 
+
   reactiveForm:FormGroup = new FormGroup({
     name: new FormControl(""),
     category: new FormControl({} as CategoryInterface),
@@ -85,13 +87,15 @@ export class FormPutProductComponent implements OnInit {
     this.percentage = $event * 25;
   }
   updateData(){
-    this.product.updateData({
+    this.product.updateData(
+    {
       name: this.reactiveForm.value.name,
       value_send: this.reactiveForm.value.value_send,
       value_buy: this.reactiveForm.value.value_buy,
       quantity: this.reactiveForm.value.quantity,
       quantity_minimum: this.reactiveForm.value.quantity_minimum
-    }, this.router.snapshot.params["id"],
+    },
+     this.router.snapshot.params["id"],
     `${this.reactiveForm.value.category.id}`,
      `${this.reactiveForm.value.provider.id}`)
     .subscribe(()=>{
