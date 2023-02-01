@@ -1,1 +1,12 @@
-<p>form-post-provider works!</p>
+<section>
+    <h1 class="text-3xl my-8 ml-8">Cadastro de Fornecedor</h1>
+    <div class="">
+        <form [formGroup]="reactiveForm" (ngSubmit)="onsubmit" class="bg-gray-100 h-screen">
+            <input type="text" name="name" ngModel placeholder="Nome" class="h-16 rounded p-2 ">
+            <input type="text" name="cnpj" ngModel placeholder="CNPJ">
+            <input type="email" name="email" ngModel placeholder="Email">
+            <input type="tel" name="phone" ngModel placeholder="Telefone">
+            <input type="submit" value="Add Provicer">
+        </form>
+    </div>
+</section>

@@ -14,3 +14,6 @@ color: black;
   display:flex;
   justify-content:center;
 }
+.mdc-data-table__cell{
+  text-align: center;
+}

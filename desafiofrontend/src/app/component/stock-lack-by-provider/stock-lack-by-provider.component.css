@@ -1,14 +1,12 @@
 table {
     width: 100%;
 }
-
+  
 ::ng-deep .mat-sort-header-container {
   display:flex;
   justify-content:center;
 }
+
 .mdc-data-table__cell{
-  text-align: center;
-}
-.mdc-data-table__cell{
-  text-align: center;
-}
+    text-align: center;
+  }

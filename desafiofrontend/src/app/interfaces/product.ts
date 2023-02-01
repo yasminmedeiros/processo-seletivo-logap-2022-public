@@ -6,6 +6,7 @@ export interface ProductInterface {
     quantity: number;
     quantity_minimum: number;
 }
+
 export interface PostPutProductInterface {
     name: string;
     value_send: number;
