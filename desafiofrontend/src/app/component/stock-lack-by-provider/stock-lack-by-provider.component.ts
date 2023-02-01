@@ -57,11 +57,5 @@ export class StockLackByProviderComponent  implements OnInit{
       this._liveAnnouncer.announce('Sorting cleared');
     }
   }
-  delete(id:number) {
-    this.provider.deleteData(`${id}`)
-      .subscribe(response => {
-        console.log(response);
-      })
-      location.reload();
-  }
+
 }

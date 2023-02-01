@@ -18,10 +18,10 @@ export class ProviderService {
                     }))
   }
   postData(data: PostPutProviderInterface): Observable<any> {
-    return this.http.post('/provider', data)
+    return this.http.post(`${this.baseURL}/provider`, data)
   }
   updateData(data: PostPutProviderInterface): Observable<any> {
-    return this.http.patch('/provider', data)
+    return this.http.patch(`${this.baseURL}/provider`, data)
   }
   deleteData(id: string): Observable<any> {
     return this.http.delete(`${this.baseURL}/provider/${id}`)

@@ -45,6 +45,8 @@ export class TableAllProductsComponent  implements OnInit{
       .subscribe(response => {
         console.log(response);
       })
-      location.reload();
+    location.reload();
+
   }
+    
 }

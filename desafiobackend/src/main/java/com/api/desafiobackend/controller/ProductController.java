@@ -30,7 +30,8 @@ public class ProductController {
     @PostMapping("/product/category/{category_id}/provider/{provider_id}")
     public Product createNewProduct (@PathVariable(value = "category_id") Long categoryId,
                                      @PathVariable(value = "provider_id") Long providerId,
-                                     Product product){
+                                     @RequestBody Product product){
+        System.out.println(product);
         Product product1 = providerRepository.findById(providerId).map(provider->{
             product.setProvider(provider);
             return product;

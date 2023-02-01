@@ -19,10 +19,10 @@ export class CategoryService {
                     }))
   }
   postData(data: PostPutCategoryInterface): Observable<any> {
-    return this.http.post('/category', data)
+    return this.http.post(`${this.baseURL}/category`, data)
   }
   updateData(data: PostPutCategoryInterface): Observable<any> {
-    return this.http.patch('/category', data)
+    return this.http.patch(`${this.baseURL}/category`, data)
   }
   deleteData(id: string): Observable<any> {
     return this.http.delete(`${this.baseURL}/category/${id}`)

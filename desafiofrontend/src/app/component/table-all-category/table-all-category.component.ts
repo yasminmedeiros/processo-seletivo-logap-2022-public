@@ -41,6 +41,7 @@ export class TableAllCategoryComponent  implements OnInit{
       .subscribe(response => {
         console.log(response);
       })
-      location.reload();
+    location.reload();
+
   }
 }

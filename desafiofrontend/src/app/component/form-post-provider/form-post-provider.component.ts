@@ -16,8 +16,8 @@ export class FormPostProviderComponent implements OnInit{
     this.reactiveForm=new FormGroup({
       name: new FormControl("",[Validators.required, Validators.minLength(10)]),
       cnpj: new FormControl("",[Validators.required, Validators.minLength(14)]),
-      email: new FormControl("",[Validators.required]),
-      phone:new FormControl("",[Validators.required]),
+      email: new FormControl("",[Validators.required, Validators.email]),
+      phone:new FormControl("",[Validators.required])
     })
   }
   onsubmit(){
@@ -30,11 +30,9 @@ export class FormPostProviderComponent implements OnInit{
   saveProvider(){
     this.provider.postData(this.reactiveForm.value).subscribe(res=>{
       console.log("sucess");
-    }, error=>{
+    }, ()=>{
       console.log("error");
     })
   }
 
-
- 
 }

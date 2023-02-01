@@ -24,10 +24,12 @@ import { FormPostCategoryComponent } from './component/form-post-category/form-p
 import { StockCategoryComponent } from './component/stock-category/stock-category.component';
 import { StockLackComponent } from './component/stock-lack/stock-lack.component';
 import { StockLackByProviderComponent } from './component/stock-lack-by-provider/stock-lack-by-provider.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule(
     { declarations: [AppComponent, TableAllProductsComponent, SidebarComponent, TableAllCategoryComponent, TableAllProviderComponent, FormPostProviderComponent, FormPostProductsComponent, FormPostCategoryComponent, StockCategoryComponent, StockLackComponent, StockLackByProviderComponent], 
-      imports: [BrowserModule, MatButtonModule, ReactiveFormsModule,FormsModule, MatFormFieldModule, MatPaginatorModule,AppRoutingModule, MatSortModule, MatTableModule, HttpClientModule, MatSidenavModule, MatListModule, BrowserAnimationsModule, MatExpansionModule], 
+      imports: [BrowserModule, MatButtonModule, MatSelectModule, MatNativeDateModule,MatListModule, ReactiveFormsModule,FormsModule, MatFormFieldModule, MatPaginatorModule,AppRoutingModule, MatSortModule, MatTableModule, HttpClientModule, MatSidenavModule, MatListModule, BrowserAnimationsModule, MatExpansionModule], 
       providers: [], 
       bootstrap: [AppComponent]
     }
