@@ -17,11 +17,17 @@ export class ProviderService {
                       return res;
                     }))
   }
+  getById(id: string){
+    return this.http.get<ProviderInterface>(`${this.baseURL}/provider/${id}`)
+                    .pipe(map((res)=>{
+                      return res;
+                    }))
+  }
   postData(data: PostPutProviderInterface): Observable<any> {
     return this.http.post(`${this.baseURL}/provider`, data)
   }
-  updateData(data: PostPutProviderInterface): Observable<any> {
-    return this.http.patch(`${this.baseURL}/provider`, data)
+  updateData(data: PostPutProviderInterface, id:string): Observable<any> {
+    return this.http.put(`${this.baseURL}/provider/${id}`, data)
   }
   deleteData(id: string): Observable<any> {
     return this.http.delete(`${this.baseURL}/provider/${id}`)

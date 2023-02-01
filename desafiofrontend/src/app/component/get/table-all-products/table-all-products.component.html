@@ -1,4 +1,4 @@
-<section>
+<section class="min-h-screen">
     <h1 class="text-3xl my-12 ml-8 mt-16">Produtos</h1>
     <div class="h-screen mx-8 text-xl">
        <table mat-table [dataSource]="productList" matSort (matSortChange)="announceSortChange($event)"
@@ -43,7 +43,7 @@
                 </th>
                 <td mat-cell *matCellDef="let element"> 
                     <div >
-                        <a  routerLink="/put-product/" target="_blank">
+                        <a  routerLink="/put-product/{{element.id}}" target="_blank">
                             <img class="border mx-auto h-10 w-auto p-1 bg-yellow-400 rounded-xl my-1.5" src="../../../assets/edit.svg"> 
                         </a>
                     </div>

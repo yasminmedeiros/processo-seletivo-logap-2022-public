@@ -37,3 +37,16 @@ Seu trabalho será criar uma aplicação Web para que os responsáveis pelo seto
 ``A modelagem dos problemas e a organização (código, repositório, interface gráfica...), serão considerados na pontuação do processo seletivo.``
 
 ``Você deverá hospedar a tarefa na nuvem e enviar por email as instruções necessárias para para acesso da aplicação. Também deverá ser enviado o link do repositório que se encontra o código fonte.``
+
+
+## 1. Desafio Backend
+
+<p> Crianção de uma API RESTful utilizando Java (Spring Boot), a partir do banco de dados definido abaixo: </p>
+
+![alt text](./desafiofrontend/src/assets/bancodedados.png)
+
+<p>Vale ressaltar que tal aplicação se encontra rodando na seguinte URL: "https://desafiobackend.herokuapp.com/"</p>
+
+## 2. Desafio Frontend
+
+<p> Crianção de uma aplicação web utilizando Angular e Typescript, que se encontra rodando na seguinte URL:"https://desafiofrontend.herokuapp.com/"</p>

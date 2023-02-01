@@ -1,0 +1,13 @@
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+button{
+    color:white;
+}
+button:hover{
+    color:#1E3A8A;
+    background-color: white;
+}

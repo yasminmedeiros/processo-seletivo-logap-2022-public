@@ -18,11 +18,17 @@ export class CategoryService {
                       return res;
                     }))
   }
+  getById(id: string){
+    return this.http.get<CategoryInterface>(`${this.baseURL}/category/${id}`)
+                    .pipe(map((res)=>{
+                      return res;
+                    }))
+  }
   postData(data: PostPutCategoryInterface): Observable<any> {
     return this.http.post(`${this.baseURL}/category`, data)
   }
-  updateData(data: PostPutCategoryInterface): Observable<any> {
-    return this.http.patch(`${this.baseURL}/category`, data)
+  updateData(data: PostPutCategoryInterface, id:string): Observable<any> {
+    return this.http.put(`${this.baseURL}/category/${id}`, data)
   }
   deleteData(id: string): Observable<any> {
     return this.http.delete(`${this.baseURL}/category/${id}`)

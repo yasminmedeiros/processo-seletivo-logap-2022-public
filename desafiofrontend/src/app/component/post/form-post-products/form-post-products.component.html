@@ -17,7 +17,7 @@
               <div class="relative">
                 <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-900 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
                         id="grid-state" formControlName="provider">
-                  <option *ngFor="let provider of statesProvider"  [ngValue]="provider">{{provider.name}}</option>
+                  <option *ngFor="let provider of statesProvider" [value]="statesProvider[0]" [ngValue]="provider">{{provider.name}}</option>
                 </select>
                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                   <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
@@ -31,7 +31,7 @@
               <div class="relative">
                 <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-900 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
                     id="grid-state" formControlName="category">
-                  <option *ngFor="let category of statesCategory" [ngValue]="category">{{category.name}}</option>
+                  <option *ngFor="let category of statesCategory" [value]="statesCategory[0]" [ngValue]="category">{{category.name}}</option>
                 </select>
                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                   <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
@@ -78,7 +78,7 @@
           </div>
         </div>
         <div class="text-center my-24 mb-12">
-            <button class="mx-auto text-white border p-4 rounded-xl text-lg hover:opacity-80 hover:bg-gray-200 hover:text-blue-900">Cadastrar</button>
+          <button class="mx-auto border px-4 py-1.5 rounded-xl text-lg ">Cadastrar</button>
           </div>
       </form>
       

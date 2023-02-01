@@ -1,1 +1,35 @@
-<p>form-put-category works!</p>
+
+<section class="h-auto min-w-fit w-3/4 mx-2 m-4 mt-16 bg-blue-900 rounded-xl border mx-auto inline">
+    <h1 class="text-4xl my-8 mx-auto  mt-16 text-center text-white">Atualizar Categoria</h1>
+    <form class="w-4/5  mx-auto my-20" [formGroup]="reactiveForm" (ngSubmit)="updateProvider()">
+        <div class="flex flex-wrap mx-auto -mx-3 mb-6">
+          <div class="w-full md:w-1/2 px-3 mb-6 mx-auto md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-first-name">
+              Nome
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-red-500 rounded py-3 px-4 mb-3 
+            leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text"  formControlName="name">
+          </div>
+        </div>
+        <div class="text-center my-24 mb-12">
+          <button class="mx-auto border px-4 py-1.5 rounded-xl text-lg ">Atualizar</button>
+          </div>
+      </form>
+      
+</section>
+<c-toaster [placement]="position" class="p-3 " position="fixed">
+  <c-toast
+    class="bg-white"
+    (timer)="onTimerChange($event)"
+    (visibleChange)="onVisibleChange($event)"
+    [visible]="visible">
+    <c-toast-header class="bg-green-700 text-lg text-white">
+      Categoria atualizada com sucesso!
+    </c-toast-header>
+    <c-toast-body>
+      <c-progress thin>
+        <c-progress-bar [value]="percentage" class="bg-green-600"></c-progress-bar>
+      </c-progress>
+    </c-toast-body>
+  </c-toast>
+</c-toaster>

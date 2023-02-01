@@ -1,1 +1,102 @@
-<p>form-put-product works!</p>
+
+<section class="h-auto min-w-fit w-3/4 m-4 mt-16 bg-blue-900 rounded-xl border mx-auto inline">
+    <h1 class="text-4xl my-12 mx-auto  mt-16 text-center text-white">Atualizar de Produto</h1>
+    <form class="w-4/5  mx-auto my-20" [formGroup]="reactiveForm" (ngSubmit)="updateData()">
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-first-name">
+              Nome
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-red-500 rounded py-3 px-4 mb-3 
+            leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Nome" formControlName="name">
+          </div>
+          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-state">
+                Fornecedor
+              </label>
+              <div class="relative">
+                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-900 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
+                        id="grid-state" formControlName="provider" [ngModel]="providerDefault">
+                  <option *ngFor="let provider of statesProvider"   [value]="provider">{{provider.name}}</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </div>
+              </div>
+          </div>
+          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-state">
+              Categoria
+              </label>
+              <div class="relative">
+                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-900 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
+                        id="grid-state" formControlName="category" [ngModel]="categoryDefault">
+                  <option *ngFor="let category of statesCategory"   [value]="category">{{category.name}}</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </div>
+              </div>
+          </div>
+    
+        </div>
+        
+        <div class="flex flex-wrap -mx-3 mb-2">
+          <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" 
+                for="grid-city" >
+              Valor de Venda
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 
+                leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" 
+                type="number" placeholder="0.00"formControlName="value_buy" >
+          </div>
+          <div class="w-full  md:w-1/4 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-state">
+              Valor de Compra
+            </label>
+            <div class="relative">
+                <input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 
+                leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="number"
+                 placeholder="0.00" formControlName="value_send">
+            </div>
+          </div>
+          <div class="w-full  md:w-1/4 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-zip">
+              Quantidade Atual
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 
+            rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip"
+             type="number" placeholder="0" formControlName="quantity">
+          </div>
+          <div class="w-full  md:w-1/4 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-zip">
+              Quantidade Mínima
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-800 border 
+            border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white
+             focus:border-gray-500" id="grid-zip" type="number" placeholder="0" formControlName="quantity_minimum">
+          </div>
+        </div>
+        <div class="text-center my-24 mb-12">
+          <button class="mx-auto border px-4 py-1.5 rounded-xl text-lg ">Atualizar</button>
+          </div>
+      </form>
+      
+</section>
+<c-toaster [placement]="position" class="p-3 " position="fixed">
+  <c-toast
+    class="bg-white"
+    (timer)="onTimerChange($event)"
+    (visibleChange)="onVisibleChange($event)"
+    [visible]="visible">
+    <c-toast-header class="bg-green-700 text-lg text-white">
+      Produto atualizado com sucesso!
+    </c-toast-header>
+    <c-toast-body>
+      <c-progress thin>
+        <c-progress-bar [value]="percentage" class="bg-green-600"></c-progress-bar>
+      </c-progress>
+    </c-toast-body>
+  </c-toast>
+</c-toaster>

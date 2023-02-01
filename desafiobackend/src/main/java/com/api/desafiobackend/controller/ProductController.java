@@ -72,8 +72,8 @@ public class ProductController {
 
     @PutMapping("/product/{id}/category/{categoryId}/provider/{providerId}")
      Product updateProduct(@RequestBody Product newProduct, @PathVariable Long id,
-                           @PathVariable(value = "category_id") Long categoryId,
-                           @PathVariable(value = "provider_id") Long providerId){
+                           @PathVariable(value = "categoryId") Long categoryId,
+                           @PathVariable(value = "providerId") Long providerId){
         Category category = categoryRepository.findById(categoryId)
                 .orElseThrow(()-> new CategoryNotFoundException(categoryId));
         Provider provider = providerRepository.findById(providerId)
