@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PostPutProductInterface, ProductInterface } from 'src/app/interfaces/product';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ import { PostPutProductInterface, ProductInterface } from 'src/app/interfaces/pr
 export class ProductService {
 
   constructor(private http:HttpClient) { }
-  private baseURL = 'https://desafiobackend.herokuapp.com'
+  private baseURL = environment.apiUrl;
 
   get(){
     return this.http.get<ProductInterface[]>(`${this.baseURL}/product`)

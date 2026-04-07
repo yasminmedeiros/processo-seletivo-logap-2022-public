@@ -1,0 +1,245 @@
+databaseChangeLog:
+  - changeSet:
+      id: 010-insert-product-data
+      author: Yasmin Medeiros
+      changes:
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: Maca Gala
+              - column:
+                  name: value_buy
+                  valueNumeric: 1.50
+              - column:
+                  name: value_send
+                  valueNumeric: 3.99
+              - column:
+                  name: quantity
+                  valueNumeric: 250
+              - column:
+                  name: quantity_minimum
+                  valueNumeric: 50
+              - column:
+                  name: category_id
+                  valueNumeric: 1
+              - column:
+                  name: provider_id
+                  valueNumeric: 1
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: Banana Prata
+              - column:
+                  name: value_buy
+                  valueNumeric: 0.80
+              - column:
+                  name: value_send
+                  valueNumeric: 2.49
+              - column:
+                  name: quantity
+                  valueNumeric: 500
+              - column:
+                  name: quantity_minimum
+                  valueNumeric: 100
+              - column:
+                  name: category_id
+                  valueNumeric: 1
+              - column:
+                  name: provider_id
+                  valueNumeric: 2
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: Arroz Integral 5kg
+              - column:
+                  name: value_buy
+                  valueNumeric: 12.00
+              - column:
+                  name: value_send
+                  valueNumeric: 18.99
+              - column:
+                  name: quantity
+                  valueNumeric: 120
+              - column:
+                  name: quantity_minimum
+                  valueNumeric: 20
+              - column:
+                  name: category_id
+                  valueNumeric: 2
+              - column:
+                  name: provider_id
+                  valueNumeric: 1
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: Feijao Carioca 1kg
+              - column:
+                  name: value_buy
+                  valueNumeric: 4.50
+              - column:
+                  name: value_send
+                  valueNumeric: 7.99
+              - column:
+                  name: quantity
+                  valueNumeric: 200
+              - column:
+                  name: quantity_minimum
+                  valueNumeric: 30
+              - column:
+                  name: category_id
+                  valueNumeric: 2
+              - column:
+                  name: provider_id
+                  valueNumeric: 2
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: Cenoura Kg
+              - column:
+                  name: value_buy
+                  valueNumeric: 1.20
+              - column:
+                  name: value_send
+                  valueNumeric: 3.49
+              - column:
+                  name: quantity
+                  valueNumeric: 150
+              - column:
+                  name: quantity_minimum
+                  valueNumeric: 40
+              - column:
+                  name: category_id
+                  valueNumeric: 3
+              - column:
+                  name: provider_id
+                  valueNumeric: 1
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: Brocolis Kg
+              - column:
+                  name: value_buy
+                  valueNumeric: 2.80
+              - column:
+                  name: value_send
+                  valueNumeric: 6.99
+              - column:
+                  name: quantity
+                  valueNumeric: 80
+              - column:
+                  name: quantity_minimum
+                  valueNumeric: 15
+              - column:
+                  name: category_id
+                  valueNumeric: 3
+              - column:
+                  name: provider_id
+                  valueNumeric: 2
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: Leite Integral 1L
+              - column:
+                  name: value_buy
+                  valueNumeric: 2.50
+              - column:
+                  name: value_send
+                  valueNumeric: 4.49
+              - column:
+                  name: quantity
+                  valueNumeric: 300
+              - column:
+                  name: quantity_minimum
+                  valueNumeric: 60
+              - column:
+                  name: category_id
+                  valueNumeric: 4
+              - column:
+                  name: provider_id
+                  valueNumeric: 3
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: Queijo Meia Cura 500g
+              - column:
+                  name: value_buy
+                  valueNumeric: 15.00
+              - column:
+                  name: value_send
+                  valueNumeric: 25.99
+              - column:
+                  name: quantity
+                  valueNumeric: 50
+              - column:
+                  name: quantity_minimum
+                  valueNumeric: 10
+              - column:
+                  name: category_id
+                  valueNumeric: 4
+              - column:
+                  name: provider_id
+                  valueNumeric: 3
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: Suco Natural Laranja 1L
+              - column:
+                  name: value_buy
+                  valueNumeric: 3.20
+              - column:
+                  name: value_send
+                  valueNumeric: 6.99
+              - column:
+                  name: quantity
+                  valueNumeric: 120
+              - column:
+                  name: quantity_minimum
+                  valueNumeric: 25
+              - column:
+                  name: category_id
+                  valueNumeric: 5
+              - column:
+                  name: provider_id
+                  valueNumeric: 4
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: Agua Mineral 1.5L
+              - column:
+                  name: value_buy
+                  valueNumeric: 0.90
+              - column:
+                  name: value_send
+                  valueNumeric: 2.49
+              - column:
+                  name: quantity
+                  valueNumeric: 5
+              - column:
+                  name: quantity_minimum
+                  valueNumeric: 100
+              - column:
+                  name: category_id
+                  valueNumeric: 5
+              - column:
+                  name: provider_id
+                  valueNumeric: 4

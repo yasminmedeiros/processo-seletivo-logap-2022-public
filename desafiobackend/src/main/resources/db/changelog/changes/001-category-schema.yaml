@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-category-schema
+      author: Yasmin Medeiros
+      changes:
+        - sql:
+            dbms: mysql
+            sql: |
+              CREATE TABLE IF NOT EXISTS category (
+                id BIGINT NOT NULL AUTO_INCREMENT,
+                name VARCHAR(255),
+                PRIMARY KEY (id)
+              );

@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 012-insert-default-user
+      author: Yasmin Medeiros
+      changes:
+        - insert:
+            tableName: app_user
+            columns:
+              - column:
+                  name: username
+                  value: user
+              - column:
+                  name: password
+                  value: user-123
+              - column:
+                  name: role
+                  value: ROLE_USER
+              - column:
+                  name: enabled
+                  valueBoolean: true

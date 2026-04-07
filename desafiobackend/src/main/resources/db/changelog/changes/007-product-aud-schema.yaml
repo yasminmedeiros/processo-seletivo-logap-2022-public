@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 007-create-product-aud-schema
+      author: Yasmin Medeiros
+      changes:
+        - sql:
+            dbms: mysql
+            sql: |
+              CREATE TABLE IF NOT EXISTS product_aud (
+                id BIGINT NOT NULL,
+                rev INT NOT NULL,
+                revtype TINYINT,
+                name VARCHAR(255),
+                value_send FLOAT,
+                value_buy FLOAT,
+                quantity INT,
+                quantity_minimum INT,
+                category_id BIGINT,
+                provider_id BIGINT,
+                PRIMARY KEY (id, rev),
+                CONSTRAINT fk_product_aud_revinfo FOREIGN KEY (rev) REFERENCES revinfo(rev)
+              );

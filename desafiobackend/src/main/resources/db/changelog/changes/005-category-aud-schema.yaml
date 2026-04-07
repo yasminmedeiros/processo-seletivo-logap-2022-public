@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 005-create-category-aud-schema
+      author: Yasmin Medeiros
+      changes:
+        - sql:
+            dbms: mysql
+            sql: |
+              CREATE TABLE IF NOT EXISTS category_aud (
+                id BIGINT NOT NULL,
+                rev INT NOT NULL,
+                revtype TINYINT,
+                name VARCHAR(255),
+                PRIMARY KEY (id, rev),
+                CONSTRAINT fk_category_aud_revinfo FOREIGN KEY (rev) REFERENCES revinfo(rev)
+              );

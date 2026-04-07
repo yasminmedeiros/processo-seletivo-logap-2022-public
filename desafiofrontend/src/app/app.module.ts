@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core'; 
 import { BrowserModule } from'@angular/platform-browser';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoginComponent } from './component/login/login.component';
+import { AuthGuard } from './guard/auth.guard';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { AppRoutingModule } from './app-routing.module'; 
@@ -34,9 +39,9 @@ import { FormPutProviderComponent } from './component/put/form-put-provider/form
 import { FormPutProductComponent } from './component/put/form-put-product/form-put-product.component';
 
 @NgModule(
-    { declarations: [AppComponent, TableAllProductsComponent, SidebarComponent, TableAllCategoryComponent, TableAllProviderComponent, FormPostProviderComponent, FormPostProductsComponent, FormPostCategoryComponent, StockCategoryComponent, StockLackComponent, StockLackByProviderComponent, FormPutCategoryComponent, FormPutProviderComponent, FormPutProductComponent], 
-      imports: [BrowserModule, AlertModule, ProgressModule,MatButtonModule, ToastModule,MatSelectModule, MatNativeDateModule,MatListModule, ReactiveFormsModule,FormsModule, MatFormFieldModule, MatPaginatorModule,AppRoutingModule, MatSortModule, MatTableModule, HttpClientModule, MatSidenavModule, MatListModule, BrowserAnimationsModule, MatExpansionModule], 
-      providers: [], 
+    { declarations: [AppComponent, TableAllProductsComponent, SidebarComponent, TableAllCategoryComponent, TableAllProviderComponent, FormPostProviderComponent, FormPostProductsComponent, FormPostCategoryComponent, StockCategoryComponent, StockLackComponent, StockLackByProviderComponent, FormPutCategoryComponent, FormPutProviderComponent, FormPutProductComponent, LoginComponent], 
+      imports: [BrowserModule, AlertModule, ProgressModule, MatButtonModule, ToastModule, MatSelectModule, MatNativeDateModule, MatListModule, ReactiveFormsModule, FormsModule, MatFormFieldModule, MatInputModule, MatPaginatorModule, AppRoutingModule, MatSortModule, MatTableModule, HttpClientModule, MatSidenavModule, MatListModule, BrowserAnimationsModule, MatExpansionModule], 
+      providers: [AuthGuard, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }], 
       bootstrap: [AppComponent]
     }
 ) 

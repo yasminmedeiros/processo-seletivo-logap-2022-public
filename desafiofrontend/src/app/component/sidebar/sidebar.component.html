@@ -29,6 +29,11 @@
              </a>
         </mat-nav-list>
     </mat-expansion-panel>
+    <div class="absolute bottom-4 w-full px-4">
+        <button mat-stroked-button color="warn" class="w-full text-white border-white" (click)="logout()">
+            Sair
+        </button>
+    </div>
     <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="text-center">
         <mat-expansion-panel-header  class=" justify-center text-white text-lg  mt-4 font-mons">
             <mat-panel-description class="text-right">Relatórios</mat-panel-description>

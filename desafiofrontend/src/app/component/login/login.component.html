@@ -1,0 +1,31 @@
+<div class="min-h-screen bg-blue-900 flex items-center justify-center">
+  <div class="bg-white rounded-2xl shadow-lg p-10 w-full max-w-sm">
+    <div class="flex justify-center mb-8">
+      <img src="assets/logo.svg" alt="Logo" class="h-12">
+    </div>
+    <h2 class="text-2xl font-semibold text-center text-blue-900 mb-6">Entrar</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="w-full mb-4">
+        <mat-label>Usuário</mat-label>
+        <input matInput formControlName="username" autocomplete="username">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-full mb-4">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" formControlName="password" autocomplete="current-password">
+      </mat-form-field>
+
+      <div *ngIf="errorMessage" class="text-red-600 text-sm mb-4 text-center">{{ errorMessage }}</div>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="w-full"
+        [disabled]="loading || loginForm.invalid">
+        {{ loading ? 'Aguarde...' : 'Entrar' }}
+      </button>
+    </form>
+  </div>
+</div>

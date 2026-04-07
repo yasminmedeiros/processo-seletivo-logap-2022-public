@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 008-insert-category-data
+      author: Yasmin Medeiros
+      changes:
+        - insert:
+            tableName: category
+            columns:
+              - column:
+                  name: name
+                  value: Frutas
+        - insert:
+            tableName: category
+            columns:
+              - column:
+                  name: name
+                  value: Cereais
+        - insert:
+            tableName: category
+            columns:
+              - column:
+                  name: name
+                  value: Legumes
+        - insert:
+            tableName: category
+            columns:
+              - column:
+                  name: name
+                  value: Laticinios
+        - insert:
+            tableName: category
+            columns:
+              - column:
+                  name: name
+                  value: Bebidas

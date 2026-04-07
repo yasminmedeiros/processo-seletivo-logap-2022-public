@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 006-create-provider-aud-schema
+      author: Yasmin Medeiros
+      changes:
+        - sql:
+            dbms: mysql
+            sql: |
+              CREATE TABLE IF NOT EXISTS provider_aud (
+                id BIGINT NOT NULL,
+                rev INT NOT NULL,
+                revtype TINYINT,
+                name VARCHAR(255),
+                cnpj VARCHAR(255),
+                email VARCHAR(255),
+                phone VARCHAR(255),
+                PRIMARY KEY (id, rev),
+                CONSTRAINT fk_provider_aud_revinfo FOREIGN KEY (rev) REFERENCES revinfo(rev)
+              );

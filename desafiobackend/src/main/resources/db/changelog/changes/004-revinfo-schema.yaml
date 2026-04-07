@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004-create-revinfo-schema
+      author: Yasmin Medeiros
+      changes:
+        - sql:
+            dbms: mysql
+            sql: |
+              CREATE TABLE IF NOT EXISTS revinfo (
+                rev INT NOT NULL,
+                revtstmp BIGINT,
+                PRIMARY KEY (rev)
+              );

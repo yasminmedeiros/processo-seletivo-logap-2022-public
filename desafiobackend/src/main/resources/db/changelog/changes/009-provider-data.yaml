@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: 009-insert-provider-data
+      author: Yasmin Medeiros
+      changes:
+        - insert:
+            tableName: provider
+            columns:
+              - column:
+                  name: name
+                  value: Distribuidora Valle Verde
+              - column:
+                  name: cnpj
+                  value: 12.345.678/0001-90
+              - column:
+                  name: email
+                  value: contato@valleverde.com.br
+              - column:
+                  name: phone
+                  value: (11) 3000-1111
+        - insert:
+            tableName: provider
+            columns:
+              - column:
+                  name: name
+                  value: Agro Brasil Exportacao
+              - column:
+                  name: cnpj
+                  value: 98.765.432/0001-10
+              - column:
+                  name: email
+                  value: vendas@agrobrasil.com.br
+              - column:
+                  name: phone
+                  value: (21) 3500-2222
+        - insert:
+            tableName: provider
+            columns:
+              - column:
+                  name: name
+                  value: Lacteos Premium Ltda
+              - column:
+                  name: cnpj
+                  value: 55.666.777/0001-88
+              - column:
+                  name: email
+                  value: sales@lacteospremium.com.br
+              - column:
+                  name: phone
+                  value: (31) 4000-3333
+        - insert:
+            tableName: provider
+            columns:
+              - column:
+                  name: name
+                  value: Alimentos Tropicais S.A.
+              - column:
+                  name: cnpj
+                  value: 11.222.333/0001-44
+              - column:
+                  name: email
+                  value: info@alimentostropicais.com.br
+              - column:
+                  name: phone
+                  value: (85) 2500-4444

@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-create-provider-schema
+      author: Yasmin Medeiros
+      changes:
+        - sql:
+            dbms: mysql
+            sql: |
+              CREATE TABLE IF NOT EXISTS provider (
+                id BIGINT NOT NULL AUTO_INCREMENT,
+                name VARCHAR(255),
+                cnpj VARCHAR(255),
+                email VARCHAR(255),
+                phone VARCHAR(255),
+                PRIMARY KEY (id)
+              );

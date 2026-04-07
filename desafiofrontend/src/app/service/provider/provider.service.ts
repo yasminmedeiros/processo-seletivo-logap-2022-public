@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ProviderInterface,PostPutProviderInterface } from 'src/app/interfaces/provider';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class ProviderService {
 
  constructor(private http:HttpClient) { }
-  private baseURL = 'https://desafiobackend.herokuapp.com'
+  private baseURL = environment.apiUrl;
 
   get(){
     return this.http.get<ProviderInterface[]>(`${this.baseURL}/provider`)

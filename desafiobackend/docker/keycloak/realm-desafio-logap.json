@@ -1,0 +1,46 @@
+{
+  "realm": "desafio-logap",
+  "enabled": true,
+  "clients": [
+    {
+      "clientId": "desafiobackend-api",
+      "enabled": true,
+      "publicClient": true,
+      "protocol": "openid-connect",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "redirectUris": ["http://localhost:4200/*"],
+      "webOrigins": ["http://localhost:4200"]
+    }
+  ],
+  "users": [
+    {
+      "username": "api-user",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "API",
+      "lastName": "User",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "api-user-123",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "user",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Default",
+      "lastName": "User",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "user-123",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}

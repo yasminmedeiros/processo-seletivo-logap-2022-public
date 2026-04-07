@@ -1,6 +1,7 @@
 package com.api.desafiobackend.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "provider")
+@Audited
 public class Provider {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,8 +24,7 @@ public class Provider {
     private String email;
     @Column(name = "phone")
     private String phone;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn( name = "provider_id", referencedColumnName = "id")
+    @OneToMany(mappedBy = "provider", cascade = CascadeType.ALL, orphanRemoval = true)
     List<Product> products = new ArrayList<>();
     public Provider() {
     }

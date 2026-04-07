@@ -2,6 +2,7 @@ package com.api.desafiobackend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.envers.Audited;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "product")
+@Audited
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
