@@ -1,7 +1,7 @@
 <section class="min-h-full">
     <h1 class="text-3xl my-12 ml-8 mt-16">Produtos</h1>
-    <div class="h-screen mx-8 text-xl">
-       <table mat-table [dataSource]="productList" matSort (matSortChange)="announceSortChange($event)"
+    <div class="mx-8 text-xl overflow-auto">
+       <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
             class="mat-elevation-z8">
             <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
@@ -61,7 +61,7 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
        </table>
-       
+          <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
     </div>
     
 </section>

@@ -4,4 +4,9 @@
 @import 'tailwindcss/utilities';
 @import url("https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css");
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: auto; }
+app-root {
+	display: block;
+	height: 100%;
+	min-height: 100%;
+}

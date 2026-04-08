@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
+import { MatPaginator } from '@angular/material/paginator';
 import {MatSort, Sort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { ProviderInterface } from 'src/app/interfaces/provider';
@@ -14,20 +15,29 @@ export class TableAllProviderComponent  implements OnInit{
   
   public providerList:ProviderInterface[] = [];
   displayedColumns: string[] = ['name', 'cnpj', 'email', 'phone','buttons'];
-  dataSource:any;
+  dataSource = new MatTableDataSource<ProviderInterface>([]);
   constructor(private provider:ProviderService,
     private _liveAnnouncer: LiveAnnouncer){ }
   ngOnInit(): void {
+    this.loadProviders();
+  }
+
+  loadProviders(): void {
     this.provider.get()
       .subscribe(res=>{
         this.providerList = res;
+        this.dataSource = new MatTableDataSource(this.providerList);
+        this.dataSource.sort = this.sort ?? null;
+        this.dataSource.paginator = this.paginator ?? null;
       })
-    this.dataSource = new MatTableDataSource(this.providerList);
-
   }
+
   @ViewChild(MatSort) sort: MatSort | undefined;
+  @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
+
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
+    this.dataSource.sort = this.sort ?? null;
+    this.dataSource.paginator = this.paginator ?? null;
   }
   announceSortChange(sortState: Sort) {
 
@@ -41,7 +51,7 @@ export class TableAllProviderComponent  implements OnInit{
   delete(id:number) {
     this.provider.deleteData(`${id}`)
       .subscribe(() => {
-        console.log("");
+        this.loadProviders();
       })
   }
 }

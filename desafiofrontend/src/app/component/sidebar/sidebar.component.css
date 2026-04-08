@@ -1,21 +1,121 @@
-mat-list{
-    margin: auto;
+.sidebar-shell {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100%;
+    overflow: auto;
+    padding: 0 0 1.5rem;
+    color: #ffffff;
 }
+
+.sidebar-brand {
+    flex-shrink: 0;
+    width: 75%;
+    margin: 0 auto;
+    padding: 1rem 0 2rem;
+}
+
+.sidebar-logo {
+    display: block;
+    width: 100%;
+    max-width: 8rem;
+    margin: 0 auto;
+}
+
+.sidebar-list {
+    width: 75%;
+    margin: 0 auto;
+    padding: 0.75rem 0;
+}
+
+.sidebar-list-item,
+.sidebar-link-item,
+.sidebar-logout-button {
+    color: #ffffff;
+    border: 0;
+    border-radius: 0.75rem;
+    transition: opacity 0.2s ease;
+}
+
+.sidebar-list-item:hover,
+.sidebar-link-item:hover,
+.sidebar-logout-button:hover {
+    opacity: 0.72;
+    background: transparent;
+}
+
+.sidebar-list-item a,
+.sidebar-link-item,
+.sidebar-logout-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 3rem;
+    text-align: left;
+}
+
+.sidebar-list-item a {
+    padding: 0 1rem;
+}
+
+.sidebar-link-item {
+    padding: 0 1rem;
+}
+
+.sidebar-panel-header {
+    min-height: 3rem;
+    height: 3rem;
+    padding: 0;
+}
+
+.sidebar-nav-list {
+    margin: 0;
+    padding: 0.25rem 0 0;
+}
+
 .mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
-    display:grid;
+    display: flex;
     flex-grow: 1;
     flex-basis: 0;
     align-items: center;
-    text-align: center;
-    padding: 0 0;
+    justify-content: flex-start;
+    min-height: 3rem;
+    margin: 0;
+    padding: 0;
 }
+
+.sidebar-panel,
 .mat-expansion-panel{
     width: 90%;
-    margin: auto;
+    margin: 0.75rem auto 0;
 }
+
+.sidebar-section-last {
+    margin-bottom: 0;
+}
+
+.sidebar-footer {
+    width: 90%;
+    margin: 1rem auto 0;
+    padding: 0;
+}
+
+.sidebar-logout-button {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0 1rem;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+}
+
 .mat-expansion-panel-body{
-    padding: 0px 0px 0px !important;
+    padding: 0 !important;
 }
-a:hover{
+
+a,
+.mat-expansion-panel,
+.mat-expansion-panel-header,
+.mat-expansion-panel-header-description {
     color: white;
 }

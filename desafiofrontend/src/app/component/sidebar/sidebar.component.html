@@ -1,55 +1,53 @@
-<div>
-    <div class="w-3/4 mx-auto p-4 py-8 border-b">
-        <img src="../../../assets/logo.svg">
+<div class="sidebar-shell">
+    <div class="sidebar-brand border-b">
+        <img src="../../../assets/logo.svg" class="sidebar-logo">
     </div>
-    <mat-list class="text-center w-3/4 mx-auto text-white font-mons text-lg border-b ">
-        <mat-list-item class="hover:bg-blue-700 hover:opacity-80 rounded-xl" >
+    <mat-list class="sidebar-list text-white font-mons text-lg border-b">
+        <mat-list-item class="sidebar-list-item">
             <a routerLink="/products">Produtos</a>
         </mat-list-item>
-        <mat-list-item class="hover:bg-blue-700 hover:opacity-80 rounded-xl">
+        <mat-list-item class="sidebar-list-item">
             <a routerLink="/categories">Categorias</a>
         </mat-list-item>
-        <mat-list-item class="hover:bg-blue-700 hover:opacity-80 rounded-xl">
+        <mat-list-item class="sidebar-list-item">
             <a routerLink="/providers">Fornecedores</a>
         </mat-list-item>
     </mat-list>
-    <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="text-center">
-        <mat-expansion-panel-header  class="justify-center text-white text-lg mt-4 font-mons">
-            <mat-panel-description class="text-right">Cadastros</mat-panel-description>
+    <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="sidebar-panel text-center">
+        <mat-expansion-panel-header class="sidebar-panel-header text-white text-lg mx-4 font-mons">
+            <mat-panel-description class="text-left">Cadastros</mat-panel-description>
         </mat-expansion-panel-header>
-        <mat-nav-list class="text-sm m-0 text-center text-white">
-            <a mat-list-item routerLink="/post-product" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
-               <span>Cadastrar Produto</span>
+        <mat-nav-list class="sidebar-nav-list text-sm text-center text-white">
+            <a mat-list-item routerLink="/post-product" class="sidebar-link-item text-white font-mons">
+                <span>Cadastrar Produto</span>
             </a>
-            <a mat-list-item routerLink="/post-category" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
+            <a mat-list-item routerLink="/post-category" class="sidebar-link-item text-white font-mons">
                 <span>Cadastrar Categoria</span>
-             </a>
-            <a mat-list-item routerLink="/post-provider" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
-                <span> Cadastrar Fornecedor</span>
-             </a>
-        </mat-nav-list>
-    </mat-expansion-panel>
-    <div class="absolute bottom-4 w-full px-4">
-        <button mat-stroked-button color="warn" class="w-full text-white border-white" (click)="logout()">
-            Sair
-        </button>
-    </div>
-    <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="text-center">
-        <mat-expansion-panel-header  class=" justify-center text-white text-lg  mt-4 font-mons">
-            <mat-panel-description class="text-right">Relatórios</mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-nav-list class="text-sm text-center text-white">
-            <a mat-list-item routerLink="/stock-category" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
-               <span>Inventário por Categoria</span>
             </a>
-            <a mat-list-item routerLink="/stock-lack" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
-                <span>Falta de Estoque</span>
-             </a>
-            <a mat-list-item routerLink="/stock-lack-by-provider" class="hover:bg-blue-700 text-white font-mons hover:opacity-80 rounded-xl">
-                <span> Falta por Fornecedor</span>
-             </a>
+            <a mat-list-item routerLink="/post-provider" class="sidebar-link-item text-white font-mons">
+                <span>Cadastrar Fornecedor</span>
+            </a>
         </mat-nav-list>
     </mat-expansion-panel>
-    
+    <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="sidebar-panel text-center sidebar-section-last">
+        <mat-expansion-panel-header class="sidebar-panel-header text-white text-lg mx-4 font-mons">
+            <mat-panel-description class="text-left">Relatórios</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-nav-list class="sidebar-nav-list text-sm text-center text-white">
+            <a mat-list-item routerLink="/stock-category" class="sidebar-link-item text-white font-mons">
+                <span>Inventário por Categoria</span>
+            </a>
+            <a mat-list-item routerLink="/stock-lack" class="sidebar-link-item text-white font-mons">
+                <span>Falta de Estoque</span>
+            </a>
+            <a mat-list-item routerLink="/stock-lack-by-provider" class="sidebar-link-item text-white font-mons">
+                <span>Falta por Fornecedor</span>
+            </a>
+        </mat-nav-list>
+    </mat-expansion-panel>
+
+    <div class="sidebar-footer">
+        <button class="sidebar-logout-button" (click)="logout()">Sair</button>
+    </div>
 </div>
         

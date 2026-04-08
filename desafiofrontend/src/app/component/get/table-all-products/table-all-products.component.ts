@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/service/product/product.service';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {MatSort, Sort} from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { ProductInterface } from 'src/app/interfaces/product';
 
@@ -17,20 +18,29 @@ export class TableAllProductsComponent  implements OnInit{
   
   public productList:ProductInterface[] = [];
   displayedColumns: string[] = ['name', 'value_send', 'value_buy', 'quantity','quantity_minimum','buttons'];
-  dataSource:any;
+  dataSource = new MatTableDataSource<ProductInterface>([]);
   constructor(private product:ProductService,
     private _liveAnnouncer: LiveAnnouncer){ }
   ngOnInit(): void {
+    this.loadProducts();
+  }
+
+  loadProducts(): void {
     this.product.get()
       .subscribe(res=>{
         this.productList = res;
+        this.dataSource = new MatTableDataSource(this.productList);
+        this.dataSource.sort = this.sort ?? null;
+        this.dataSource.paginator = this.paginator ?? null;
       })
-    this.dataSource = new MatTableDataSource(this.productList);
-
   }
+
   @ViewChild(MatSort) sort: MatSort | undefined;
+  @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
+
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
+    this.dataSource.sort = this.sort ?? null;
+    this.dataSource.paginator = this.paginator ?? null;
   }
   announceSortChange(sortState: Sort) {
 
@@ -44,7 +54,7 @@ export class TableAllProductsComponent  implements OnInit{
   delete(id:number) {
     this.product.deleteData(`${id}`)
       .subscribe(() => {
-        console.log("");
+        this.loadProducts();
       })
 
   }

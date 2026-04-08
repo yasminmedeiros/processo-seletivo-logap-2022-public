@@ -2,6 +2,9 @@ databaseChangeLog:
   - changeSet:
       id: 012-insert-default-user
       author: Yasmin Medeiros
+      validCheckSum:
+        - 8:9edf46ed2202f080e2403486c67eafc9
+        - 8:fb743f4e7434b295fde6825783a203c5
       changes:
         - insert:
             tableName: app_user
@@ -10,8 +13,8 @@ databaseChangeLog:
                   name: username
                   value: user
               - column:
-                  name: password
-                  value: user-123
+                  name: password_hash
+                  value: $2b$10$imIBhG.Tl7idLETGizJZ0uHlBgTSwcHic/JL9GlMpB.V9DDA6Qs/O
               - column:
                   name: role
                   value: ROLE_USER

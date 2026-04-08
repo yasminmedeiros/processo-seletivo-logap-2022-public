@@ -2,6 +2,9 @@ databaseChangeLog:
   - changeSet:
       id: 011-create-app-user-table
       author: Yasmin Medeiros
+      validCheckSum:
+        - 8:d8f8ea4d613c2ea97394a53cdda348ca
+        - 8:9f7b7ee6d4657ca1691e4d86dda6643e
       changes:
         - createTable:
             tableName: app_user
@@ -22,7 +25,7 @@ databaseChangeLog:
                     unique: true
                     uniqueConstraintName: uk_app_user_username
               - column:
-                  name: password
+                  name: password_hash
                   type: VARCHAR(255)
                   constraints:
                     nullable: false

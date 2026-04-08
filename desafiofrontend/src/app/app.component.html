@@ -1,10 +1,20 @@
-<body class="min-h-full w-full">
-  <mat-sidenav-container class="min-h-full w-full">
-    <mat-sidenav *ngIf="router.url !== '/login'" mode="side" opened="true" class="bg-blue-900 w-64">
+<div class="app-shell">
+  <mat-sidenav-container class="app-layout">
+    <mat-sidenav
+      #sidebar
+      *ngIf="router.url !== '/login'"
+      [mode]="isMobile ? 'over' : 'side'"
+      [opened]="!isMobile"
+      class="app-sidebar">
       <app-sidebar></app-sidebar>
     </mat-sidenav>
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
+    <mat-sidenav-content class="app-content-shell">
+      <div *ngIf="router.url !== '/login' && isMobile" class="app-toolbar">
+        <button mat-stroked-button class="app-menu-button" (click)="toggleMobileSidebar()">Menu</button>
+      </div>
+      <main class="app-content" [class.app-content--login]="router.url === '/login'" (click)="closeMobileSidebar()">
+        <router-outlet></router-outlet>
+      </main>
     </mat-sidenav-content>
   </mat-sidenav-container>
-</body>
+</div>

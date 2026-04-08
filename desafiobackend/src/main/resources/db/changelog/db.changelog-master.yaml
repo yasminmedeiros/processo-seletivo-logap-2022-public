@@ -23,3 +23,5 @@ databaseChangeLog:
       file: db/changelog/changes/011-user-schema.yaml
   - include:
       file: db/changelog/changes/012-user-data.yaml
+  - include:
+      file: db/changelog/changes/013-rename-password-column.yaml
